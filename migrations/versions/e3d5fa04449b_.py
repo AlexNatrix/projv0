@@ -1,4 +1,5 @@
-from app import db"""empty message
+from app import db
+"""empty message
 
 Revision ID: e3d5fa04449b
 Revises: 43c8554a5ad9
