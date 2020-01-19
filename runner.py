@@ -1,9 +1,5 @@
-
-from flask import Flask
-from flask import render_template
-from app import app, db, routes
+from app import app, db
 from app.models import User, Post
-
 
 
 @app.shell_context_processor
