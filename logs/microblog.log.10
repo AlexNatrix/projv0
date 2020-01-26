@@ -1,68 +1,118 @@
-2020-01-22 23:41:50,827 ERROR: Exception on / [GET] [in /home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/app.py:1891]
+2020-01-25 00:32:20,150 ERROR: Exception on /index [GET] [in C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/app.py", line 1949, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/app.py", line 1925, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/app.py", line 1907, in raise_routing_exception
-    raise request.routing_exception
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/ctx.py", line 350, in match_request
-    result = self.url_adapter.match(return_rule=True)
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 1799, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: ОШИБКА:  столбец post.language не существует
+LINE 2: ... AS post_timestamp, post.user_id AS post_user_id, post.langu...
+                                                             ^
 
-During handling of the above exception, another exception occurred:
+
+The above exception was the direct cause of the following exception:
 
 Traceback (most recent call last):
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/app.py", line 2446, in wsgi_app
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/app.py", line 1951, in full_dispatch_request
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/app.py", line 1743, in handle_http_exception
-    return handler(e)
-  File "/home/natrix/PycharmProjects/proj/app/errors/handlers.py", line 8, in not_found_error
-    return render_template('errors/404.html'), 404
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/templating.py", line 140, in render_template
-    ctx.app,
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/templating.py", line 120, in _render
-    rv = template.render(context)
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/natrix/PycharmProjects/proj/app/templates/errors/404.html", line 1, in top-level template code
-    {% extends "base.html" %}
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/jinja2/environment.py", line 1005, in render
-    return concat(self.root_render_func(self.new_context(vars)))
-  File "/home/natrix/PycharmProjects/proj/app/templates/errors/404.html", line 14, in root
-  File "/home/natrix/PycharmProjects/proj/app/templates/base.html", line 14, in root
-    <span class="icon-bar"></span>
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 10, in root
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block_doc
-    {% block body -%}
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 39, in block_html
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 90, in block_body
-  File "/home/natrix/PycharmProjects/proj/app/templates/base.html", line 42, in block_navbar
-    <div class="alert alert-info" role="alert">{{ message }}</div>
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/jinja2/runtime.py", line 262, in call
-    return __obj(*args, **kwargs)
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/helpers.py", line 370, in url_for
-    return appctx.app.handle_url_build_error(error, endpoint, values)
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/app.py", line 2215, in handle_url_build_error
-    reraise(exc_type, exc_value, tb)
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/_compat.py", line 39, in reraise
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
     raise value
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/flask/helpers.py", line 358, in url_for
-    endpoint, values, method=method, force_external=external
-  File "/home/natrix/PycharmProjects/proj/venv/lib/python3.7/site-packages/werkzeug/routing.py", line 2020, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.BuildError: Could not build url for endpoint 'index'. Did you mean 'auth.login' instead?
-2020-01-22 23:43:12,708 INFO: Microblog startup [in /home/natrix/PycharmProjects/proj/app/__init__.py:74]
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\app\main\routes.py", line 39, in index
+    page, current_app.config['POSTS_PER_PAGE'], False)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask_sqlalchemy\__init__.py", line 496, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3211, in all
+    return list(self)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3367, in __iter__
+    return self._execute_and_instances(context)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3392, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 581, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) ОШИБКА:  столбец post.language не существует
+LINE 2: ... AS post_timestamp, post.user_id AS post_user_id, post.langu...
+                                                             ^
+
+[SQL: SELECT anon_1.post_id AS anon_1_post_id, anon_1.post_body AS anon_1_post_body, anon_1.post_timestamp AS anon_1_post_timestamp, anon_1.post_user_id AS anon_1_post_user_id, anon_1.post_language AS anon_1_post_language 
+FROM (SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id, post.language AS post_language 
+FROM post JOIN followers ON followers.followed_id = post.user_id 
+WHERE followers.follower_id = %(follower_id_1)s UNION SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id, post.language AS post_language 
+FROM post 
+WHERE post.user_id = %(user_id_1)s) AS anon_1 ORDER BY anon_1.post_timestamp DESC 
+ LIMIT %(param_1)s OFFSET %(param_2)s]
+[parameters: {'follower_id_1': 1, 'user_id_1': 1, 'param_1': 3, 'param_2': 0}]
+(Background on this error at: http://sqlalche.me/e/f405)
+2020-01-25 00:37:56,742 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 00:38:17,157 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 00:42:51,894 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 00:43:12,806 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 00:46:14,525 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 00:46:26,548 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 00:52:07,540 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 00:59:00,706 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 01:05:58,182 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 01:06:12,551 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 01:06:31,385 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 01:23:36,520 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 01:23:40,476 ERROR: Exception on /search [GET] [in C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\flask_login\utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\app\main\routes.py", line 155, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\app\models.py", line 92, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\app\search.py", line 22, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\elasticsearch\client\utils.py", line 84, in _wrapped
+    return func(*args, params=params, **kwargs)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\elasticsearch\client\__init__.py", line 1548, in search
+    "GET", _make_path(index, doc_type, "_search"), params=params, body=body
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\elasticsearch\transport.py", line 358, in perform_request
+    timeout=timeout,
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 261, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "C:\Users\Raynolds\PycharmProjects\mBlog\venv\lib\site-packages\elasticsearch\connection\base.py", line 182, in _raise_error
+    status_code, error_message, additional_info
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+2020-01-25 02:22:50,904 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 02:26:26,068 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 02:42:02,077 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]
+2020-01-25 02:42:11,545 INFO: Microblog startup [in C:\Users\Raynolds\PycharmProjects\mBlog\app\__init__.py:77]

@@ -8,16 +8,17 @@ class Config(object):
     SECRET_KEY = 'this-really-needs-to-be-changed'
     SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://postgres:postgres@localhost/postgres"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    MAIL_SERVER = os.environ.get('MAIL_SERVER')
-    MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)
+    MAIL_SERVER = "127.0.0.1"
+    MAIL_PORT = 8025
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-    ADMINS = [] #UBERI ETO EBLAN
+    ADMINS = ['coldembracer@gmail.com'] #UBERI ETO EBLAN
     POSTS_PER_PAGE = 3
     LANGUAGES = ['en', 'es']
     MS_TRANSLATOR_KEY = 'trnsl.1.1.20200122T180450Z.00e4d4a94fca15fb.3f0d1d69f055b5e7d0cfa23baf6d07391bf07a94'
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
+    REDIS_URL = "redis://:@127.0.0.1:6379"
         #os.environ.get('MS_TRANSLATOR_KEY')
 """
 set MAIL_SERVER = smtp.gmail.com
